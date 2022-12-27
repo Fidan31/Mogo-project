@@ -1,0 +1,196 @@
+html,body{
+   margin: 0;
+   font-family: 'Montserrat', sans-serif;
+   font-size: 15px;
+   color: #070707;
+   line-height: 1.6;
+}
+
+
+
+*, /* это подстановочный знак.(selector) Это означает применение этих стилей ко всем элементам.*/
+*:before,
+*:after{
+   box-sizing: border-box;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+margin: 0;
+}
+
+.container{
+   width: 100%;
+   max-width: 1200px;
+   margin: 0 auto;
+
+}
+/*intro*/
+.intro{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   width: 100%;
+   height: 100vh;
+
+   background:
+    url("../images/Layer\ 15.jpg") center
+    no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;/* кратко можно писать bgsc  */   
+    
+}
+.intro_inner{
+   width: 100%;
+   max-width: 700px;
+   margin: 0 auto;
+   text-align: center;
+   margin-top: -25px;
+}
+
+
+.intro_title{
+   color: #fff;
+   font-size: 130px;
+   font-weight: 550;
+   text-transform: uppercase;
+   line-height: 1;
+   
+}
+.intro_title:after{
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;  
+    background-color: #fff;
+    margin: 20px auto; 
+}
+.intro_suptitle{
+   margin-bottom: 5px;
+   font-size: 65px;
+   color: #fff;
+   font-family: 'Kaushan Script', cursive;
+   text-align: center;
+   font-weight: 400;
+}
+
+/*header*/
+.header{
+  width: 100%;
+  padding-top: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  
+}
+
+.header_inner{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.header_logo{
+ font-size: 30px;
+ font-weight: 700;
+ color: white;
+}
+
+/*nav*/
+.nav{
+   font-size: 14px;
+   text-transform: uppercase;
+}
+.nav_link{
+display: inline-block;
+vertical-align: top;
+margin: 0 15px;
+position: relative;
+
+color: #fff;/*белый цвет*/
+text-decoration: none;
+transition: color .1s linear; /* чтобы плавно перешел*/
+}
+.nav_link:after{  /* при наводе на полоску*/
+   content: "";
+   display: block;
+   width: 100%;
+   height: 3px;
+
+   background-color: #fce38a;
+   opacity: 0;  /*чтобы было плавно*/
+   
+   position: absolute;
+   top: 100%;
+   left: 0;
+   z-index: 1;
+   transition: opacity .1s linear;
+}
+.nav_link:hover{
+   color: #fce38a;
+}
+.nav_link:hover:after{
+   opacity: 1; /*чтобы было плавно*/
+}
+/*Button*/
+.btn{
+   display: inline-block;
+   vertical-align: top;
+   border: 3px solid #fff;
+   padding: 8px 30px;
+   font-size: 14px;
+   font-weight: 700;
+   color: #fff;
+   text-transform: uppercase;
+   text-decoration: none;
+
+   transition: background .1s
+   linear,color .1s linear;
+}
+.btn:hover{
+   background-color: #fff;
+   color: black;
+  
+}
+/*slider*/
+.slider{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+.slider_inner{
+   display: flex;
+   justify-content: space-between;
+ 
+}
+.slider_item{
+   width: 23%;
+   padding: 20px 0;
+   opacity: 0.6;
+   position: relative;
+   border-top: 2px solid white;
+   font-size: 18px;
+   color: #fff;
+   text-transform: uppercase;/*чтобы все буквы были большими*/
+}
+.slider_item.active{
+   opacity: 1;
+}
+.slider_item.active:before{
+   content: "";
+   display: block;
+   width: 70px;
+   height: 3px;
+   position: absolute;
+   top: -3px;
+   left: 0;
+   z-index: 1;
+   background-color: rgb(207, 33, 33);
+}
+.slider_num{
+   font-size: 24px;
+   font-weight: 700;
+}
